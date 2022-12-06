@@ -1,0 +1,24 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+  }
+  
+.alpha10 {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(255, 255, 255);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF, endColorstr=#4CFFFFFF);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF, endColorstr=#4CFFFFFF)";
+}

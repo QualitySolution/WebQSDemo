@@ -1,0 +1,16 @@
+# 1 YEAR
+<FilesMatch ".(ico|pdf|flv)$">
+Header set Cache-Control "max-age=29030400, public"
+</FilesMatch>
+# 1 WEEK
+<FilesMatch ".(jpg|jpeg|png|gif|swf|xml|txt|css|js|ttf|png|svg|woff2)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+# 1 MIN
+<FilesMatch ".(html|htm|php)$">
+Header set Cache-Control "max-age=60, private, proxy-revalidate"
+</FilesMatch>
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/robots\.txt$
+RewriteCond %{HTTP:X-Forwarded-proto} !^https$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
